@@ -15,6 +15,7 @@ main() {
     local name_path="$(snapshot_dir)/$name"
 
     if [[ -L "$name_path" ]]; then
+      tmux setenv TMUX_SNAPSHOT_NAME $name
       local last_snapshot="$(readlink "$name_path")"
       ln -fs "$last_snapshot" "$last_file"
       "$resurrect_restore_script_path" "quiet" >/dev/null 2>&1
