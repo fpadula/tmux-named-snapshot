@@ -19,7 +19,7 @@ main() {
       ln -fs "$last_snapshot" "$last_file"
       "$resurrect_restore_script_path" "quiet" >/dev/null 2>&1
       ln -fs "$original_path" "$last_file"
-      tmux setenv TMUX_SNAPSHOT_NAME "$name"
+      export TMUX_SNAPSHOT_NAME="$name"
     else
       tmux display-message "Snapshot '$name' not found"
     fi

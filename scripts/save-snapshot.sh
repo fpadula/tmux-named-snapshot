@@ -26,7 +26,7 @@ main() {
     fi
 
     tmux display-message "Snapshot '$name' saved"
-    tmux setenv TMUX_SNAPSHOT_NAME "$name"
+    export TMUX_SNAPSHOT_NAME="$name"
   fi
 }
 
