@@ -39,10 +39,6 @@ bind_key() {
     else
       tmux bind-key "$key" run-shell "$CURRENT_DIR/scripts/$action-snapshot.sh $name"
     fi
-    if [ "$name" != "dev" ] && [ "$name" != "manual" ]; then
-      tmux setenv TMUX_SNAPSHOT_NAME "$name"
-    fi
-
   fi
 }
 
