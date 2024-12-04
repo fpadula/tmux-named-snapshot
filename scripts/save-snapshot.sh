@@ -10,7 +10,7 @@ main() {
   local resurrect_save_script_path="$(get_tmux_option "$resurrect_save_path_option" "")"
   if [ -n "$resurrect_save_script_path" ] && [ -n "$name" ]; then
     tmux display-message "Saving snapshot '$name'..."
-    tmux setenv TMUX_SNAPSHOT_NAME $name
+    tmux setenv -g TMUX_SNAPSHOT_NAME $name
     local last_file="$(last_resurrect_file)"
     local original_path="$(last_resurrect_path)"
     local name_path="$(snapshot_dir)/$name"
